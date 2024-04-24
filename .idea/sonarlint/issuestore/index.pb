@@ -1,0 +1,25 @@
+
+x
+Happ/src/main/java/test/team/nti/foodies/presentation/navigation/Route.kt,e\a\eabc6633a026756dc9e3eb95374b41a1f3f8d53c
+{
+Kapp/src/main/java/test/team/nti/foodies/presentation/navigation/NavGraph.kt,c\a\cab2ab48ff1d59025fdf57094b2fdf90d426bd75
+g
+7app/src/main/java/test/team/nti/foodies/MainActivity.kt,3\2\3250e59ef25907e4b8ee71a00082282c76853a05
+‚
+Rapp/src/main/java/test/team/nti/foodies/presentation/splash_screen/SplashScreen.kt,1\f\1f1719ebd0710cd1c6b64646db53f4cf156e6057
+i
+9app/src/main/java/test/team/nti/foodies/ui/theme/Color.kt,2\c\2ce831384c37f2f39b337ef34d9bac6e597e856a
+i
+9app/src/main/java/test/team/nti/foodies/ui/theme/Theme.kt,a\7\a7163740c1a2363045ebd78c2f0ea388e72ea300
+D
+app/build.gradle.kts,d\2\d2a4383452aad84a18429a5844d31330a012a9e6
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+}
+Mapp/src/main/java/test/team/nti/foodies/presentation/catalog/CatalogScreen.kt,2\6\2615738434ef79c849523e96f5fc36a06606543a
+†
+Vapp/src/main/java/test/team/nti/foodies/presentation/catalog/components/CatalogItem.kt,e\2\e23fc8f2cb9acdc36cd10c066243ca27113f09cb
+h
+8app/src/main/java/test/team/nti/foodies/ui/theme/Type.kt,a\6\a6ae2b2c9cce54f205b6afaaeafb32d794a6121f
+€
+Papp/src/main/java/test/team/nti/foodies/presentation/item_card/ItemCardScreen.kt,3\7\375d80ba457c6a9a90ff056916fc198d1fa096ff
