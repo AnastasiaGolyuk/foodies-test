@@ -8,18 +8,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -30,15 +26,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import test.team.nti.foodies.R
-import test.team.nti.foodies.ui.theme.FoodiesTheme
+import test.team.nti.foodies.model.Product
 import test.team.nti.foodies.ui.theme.OrangePrimary
 
 @Composable
-fun CartItem() {
+fun CartItem(item: Product) {
     Row(
         modifier = Modifier
             .background(color = Color.White)
@@ -57,7 +51,7 @@ fun CartItem() {
             modifier = Modifier.height(96.dp),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
-            Text(text = "Том-ям",style = MaterialTheme.typography.bodySmall,
+            Text(text = item.name,style = MaterialTheme.typography.bodySmall,
                 color = Color.Black.copy(alpha = 0.87f))
 
             Row(
@@ -111,13 +105,13 @@ fun CartItem() {
                 }
                 Column {
                     Text(
-                        text = "480 ₽",
+                        text = "${item.priceCurrent} ₽",
                         style = MaterialTheme.typography.titleMedium,
                         color = Color.Black.copy(alpha = 0.87f)
                     )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
-                        text = "480 ₽",
+                        text = "${item.priceOld} ₽",
                         style = MaterialTheme.typography.titleSmall,
                         color = Color.Black.copy(alpha = 0.6f),
                         textDecoration = TextDecoration.LineThrough
@@ -128,19 +122,3 @@ fun CartItem() {
 
     }
 }
-
-//@Preview
-//@Composable
-//fun CartItemPrev() {
-//    val itemsList = List(5) { index -> }
-//    FoodiesTheme {
-//        LazyColumn(
-//
-//        ) {
-//            items(items = itemsList) {
-//                CartItem()
-//                Divider(color = Color.Black.copy(alpha = 0.12f), thickness = 1.dp)
-//            }
-//        }
-//    }
-//}

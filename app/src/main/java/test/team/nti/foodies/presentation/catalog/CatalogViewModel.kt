@@ -8,6 +8,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import test.team.nti.foodies.api.ApiService
 import test.team.nti.foodies.model.Category
@@ -29,13 +30,17 @@ class CatalogViewModel @Inject constructor(private val apiService: ApiService) :
     private val _items = mutableStateListOf<Product>()
     val items: SnapshotStateList<Product> = _items
 
+    private val _itemsOfCategory = mutableStateListOf<Product>()
+    val itemsOfCategory: SnapshotStateList<Product> = _itemsOfCategory
+
     fun fetchCategories() {
         viewModelScope.launch {
             try {
                 val response = apiService.getCategories()
                 _categories.clear()
                 _categories.addAll(response)
-                _selectedCategory.value = response[0].name
+                delay(100)
+                setCategory(categories[0])
             } catch (e: Exception) {
 
             }
@@ -66,7 +71,13 @@ class CatalogViewModel @Inject constructor(private val apiService: ApiService) :
         }
     }
 
-    fun setCategory(category: String) {
-        _selectedCategory.value = category
+    fun setCategory(category: Category) {
+        _selectedCategory.value = category.name
+        filterItems(category)
+    }
+
+    private fun filterItems(category: Category) {
+        _itemsOfCategory.clear()
+        _itemsOfCategory.addAll(_items.filter { it.categoryId == category.id })
     }
 }

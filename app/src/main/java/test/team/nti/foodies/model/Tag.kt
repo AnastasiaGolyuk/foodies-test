@@ -1,3 +1,8 @@
 package test.team.nti.foodies.model
 
-data class Tag(val id: Int, val name: String)
+import com.google.gson.annotations.SerializedName
+
+data class Tag(
+    @SerializedName("id") val id: Int,
+    @SerializedName("name") val name: String
+)

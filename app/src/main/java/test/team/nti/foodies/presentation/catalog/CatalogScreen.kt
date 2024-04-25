@@ -48,12 +48,13 @@ import test.team.nti.foodies.ui.theme.OrangePrimary
 @Composable
 fun CatalogScreen(navController : NavController, viewModel: CatalogViewModel) {
     val categories = viewModel.categories
-    val items = viewModel.items
+    val items = viewModel.itemsOfCategory
     val selectedCategory = viewModel.selectedCategory
 //    val items = List(7) { index -> }
 
     LaunchedEffect(Unit) {
         viewModel.fetchCategories()
+        viewModel.fetchTags()
         viewModel.fetchItems()
     }
 
@@ -104,7 +105,7 @@ fun CatalogScreen(navController : NavController, viewModel: CatalogViewModel) {
                         item { Spacer(modifier = Modifier.width(16.dp)) }
                         items(items = categories) { item ->
                             Button(
-                                onClick = { viewModel.setCategory(item.name) },
+                                onClick = { viewModel.setCategory(item) },
                                 modifier = Modifier.padding(0.dp),
                                 shape = RoundedCornerShape(8.dp),
                                 colors = ButtonDefaults.buttonColors(containerColor = if (item.name == selectedCategory.value) OrangePrimary else Color.White),
@@ -132,16 +133,8 @@ fun CatalogScreen(navController : NavController, viewModel: CatalogViewModel) {
             horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally)
         ) {
             items(items = items) { item ->
-                CatalogItem(navController = navController, item = item)
+                CatalogItem(navController = navController, item = item, tags = viewModel.tags)
             }
         }
     }
 }
-
-//@Preview
-//@Composable
-//fun CatPrev() {
-//    FoodiesTheme {
-//        CatalogScreen()
-//    }
-//}

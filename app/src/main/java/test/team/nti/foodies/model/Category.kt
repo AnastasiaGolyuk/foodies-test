@@ -1,7 +1,8 @@
 package test.team.nti.foodies.model
 
-data class Category(
+import com.google.gson.annotations.SerializedName
 
-    var id: Int,
-    var name: String
+data class Category(
+    @SerializedName("id") val id: Int,
+    @SerializedName("name") val name: String
 )

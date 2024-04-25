@@ -41,26 +41,39 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import test.team.nti.foodies.R
 import test.team.nti.foodies.model.Product
+import test.team.nti.foodies.model.Tag
 import test.team.nti.foodies.presentation.navigation.Route
 import test.team.nti.foodies.ui.theme.GreyBg
 import test.team.nti.foodies.ui.theme.OrangePrimary
 
 @Composable
-fun CatalogItem(navController: NavController, item: Product) {
+fun CatalogItem(navController: NavController, item: Product, tags : List<Tag>) {
     Box(
         modifier = Modifier
             .background(color = GreyBg, shape = RoundedCornerShape(8.dp))
             .fillMaxSize()
-            .clickable { navController.navigate(Route.ItemCardScreen.route) }
+            .clickable { navController.navigate("${Route.ItemCardScreen.route}/${item.id}") }
     ) {
-        for (tag in item.tag_ids){
-            Image(
-                painter = painterResource(id = R.drawable.sale_tag),
-                contentDescription = "Item image",
-                modifier = Modifier
-                    .padding(8.dp)
-                    .size(24.dp)
-            )
+        Row {
+            if (item.priceOld != null) {
+                Image(
+                    painter = painterResource(id = R.drawable.sale_tag),
+                    contentDescription = "Item image",
+                    modifier = Modifier
+                        .padding(top = 8.dp, start = 8.dp)
+                        .size(24.dp)
+                )
+            }
+            for (tag in item.tagIds) {
+                val iconId = getTagIconId(tag,tags)
+                Image(
+                    painter = painterResource(id = iconId),
+                    contentDescription = "Item image",
+                    modifier = Modifier
+                        .padding(top = 8.dp, start = 8.dp)
+                        .size(24.dp)
+                )
+            }
         }
 
         Column(modifier = Modifier.fillMaxWidth()) {
@@ -82,7 +95,7 @@ fun CatalogItem(navController: NavController, item: Product) {
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "${item.measure} ${item.measure_unit}",
+                    text = "${item.measure} ${item.measureUnit}",
                     style = MaterialTheme.typography.bodySmall,
                     color = Color.Black.copy(alpha = 0.6f)
                 )
@@ -108,14 +121,14 @@ fun CatalogItem(navController: NavController, item: Product) {
                     border = BorderStroke(width = 0.dp, color = Color.Transparent)
                 ) {
                     Text(
-                        text = "${item.price_current / 100} ₽",
+                        text = "${item.priceCurrent / 100} ₽",
                         style = MaterialTheme.typography.titleMedium,
                         color = Color.Black.copy(alpha = 0.87f)
                     )
-                    if (item.price_old != null) {
+                    if (item.priceOld != null) {
                         Spacer(modifier = Modifier.width(4.dp))
                         Text(
-                            text = "${item.price_old / 100} ₽",
+                            text = "${item.priceOld / 100} ₽",
                             style = MaterialTheme.typography.titleSmall,
                             color = Color.Black.copy(alpha = 0.6f),
                             textDecoration = TextDecoration.LineThrough
@@ -162,23 +175,13 @@ fun CatalogItem(navController: NavController, item: Product) {
     }
 }
 
-//@Preview
-//@Composable
-//fun ItemPreview() {
-//    val items = List(7) { index -> }
-//    Box(
-//        modifier = Modifier
-//            .fillMaxSize()
-//            .background(color = Color.White)
-//    ) {
-//        LazyVerticalGrid(
-//            columns = GridCells.Fixed(2),
-//            verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterVertically),
-//            horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally)
-//        ) {
-//            items(items = items) { item ->
-//                CatalogItem()
-//            }
-//        }
-//    }
-//}
+fun getTagIconId(tagId: Int, tags: List<Tag>): Int {
+    return when (tagId) {
+        tags[0].id -> R.drawable.new_tag
+        tags[1].id -> R.drawable.vegan_tag
+        tags[2].id -> R.drawable.hit_tag
+        tags[3].id -> R.drawable.hot_tag
+        tags[4].id -> R.drawable.express_tag
+        else -> R.drawable.sale_tag
+    }
+}

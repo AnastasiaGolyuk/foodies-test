@@ -82,8 +82,8 @@ fun CartScreen(navController : NavController) {
         LazyColumn(
             modifier = Modifier.padding(top = 5.dp)
         ) {
-            items(items = itemsList) {
-                CartItem()
+            items(items = itemsList) { item ->
+//                CartItem(item = item)
                 Divider(color = Color.Black.copy(alpha = 0.12f), thickness = 1.dp)
             }
         }
