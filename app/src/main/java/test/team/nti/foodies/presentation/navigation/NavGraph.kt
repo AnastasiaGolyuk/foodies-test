@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import test.team.nti.foodies.presentation.cart.CartScreen
+import test.team.nti.foodies.presentation.cart.CartViewModel
 import test.team.nti.foodies.presentation.catalog.CatalogScreen
 import test.team.nti.foodies.presentation.catalog.CatalogViewModel
 import test.team.nti.foodies.presentation.item_card.ItemCardScreen
@@ -42,7 +43,8 @@ fun NavGraph(
 
         }
         composable(route = Route.CartScreen.route) {
-            CartScreen(navController = navController)
+            val viewModel: CartViewModel = hiltViewModel()
+            CartScreen(navController = navController, viewModel = viewModel)
         }
     }
 }

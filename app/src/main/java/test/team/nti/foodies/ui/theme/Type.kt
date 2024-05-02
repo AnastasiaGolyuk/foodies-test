@@ -36,6 +36,13 @@ val FoodiesTypography = Typography(
         fontSize = 34.sp,
         lineHeight = 36.sp
     ),
+    //Filter indicator
+    titleLarge = TextStyle(
+        fontFamily = robotoFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 11.sp,
+        lineHeight = 13.sp
+    ),
     //Button
     titleMedium = TextStyle(
         fontFamily = robotoFamily,

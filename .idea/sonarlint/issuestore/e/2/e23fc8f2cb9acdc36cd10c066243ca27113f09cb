@@ -1,23 +1,12 @@
 
-Bkotlin:S125Z"Remove this commented out code.(ÉæÕñþÿÿÿÿ8â´¬‹ñ1
-=kotlin:S125}"Remove this commented out code.(§ã†×8å´¬‹ñ1
-Ckotlin:S125¥"Remove this commented out code.(äèáåûÿÿÿÿ8æ´¬‹ñ1
-Pkotlin:S1135["2Complete the task associated to this TODO comment.(Ž¶à8ì´¬‹ñ1
-Qkotlin:S1135e"2Complete the task associated to this TODO comment.(ò¢«ˆ8ì´¬‹ñ1
-Qkotlin:S1135ƒ"2Complete the task associated to this TODO comment.(Ž¶à8ì´¬‹ñ1
-Qkotlin:S1135”"2Complete the task associated to this TODO comment.(Ž¶à8ì´¬‹ñ1
->kotlin:S1128"Remove this unused import.(µ¢«Ïúÿÿÿÿ8ï´¬‹ñ1
->kotlin:S1128
-"Remove this unused import.(»æø—ùÿÿÿÿ8ï´¬‹ñ1
-9kotlin:S1128"Remove this unused import.(ß¶Ýñ8ï´¬‹ñ1
-8kotlin:S1128"Remove this unused import.(¢™w8ï´¬‹ñ1
->kotlin:S1128"Remove this unused import.(²Üžñþÿÿÿÿ8ï´¬‹ñ1
-9kotlin:S1128"Remove this unused import.(Œ¯ñ¯8ï´¬‹ñ1
-8kotlin:S1128"Remove this unused import.(”ƒn8ï´¬‹ñ1
-9kotlin:S1128"Remove this unused import.(§¨ê8ï´¬‹ñ1
-9kotlin:S1128"Remove this unused import.(ƒ²³Ë8ï´¬‹ñ1
->kotlin:S1128"Remove this unused import.(÷¡ùƒûÿÿÿÿ8ï´¬‹ñ1
-9kotlin:S1128"Remove this unused import.(Äåì¾8ï´¬‹ñ1
->kotlin:S1128!"Remove this unused import.(ÏõÁÞþÿÿÿÿ8ï´¬‹ñ1
-9kotlin:S1128'"Remove this unused import.(®©Ô”8ð´¬‹ñ1
-9kotlin:S1128."Remove this unused import.(•­‰Ü8×ëé‹ñ1
+8kotlin:S1128"Remove this unused import.(¢™w8°ß†Îñ1
+>kotlin:S1128"Remove this unused import.(²Üžñþÿÿÿÿ8°ß†Îñ1
+9kotlin:S1128"Remove this unused import.(Œ¯ñ¯8°ß†Îñ1
+8kotlin:S1128"Remove this unused import.(”ƒn8°ß†Îñ1
+9kotlin:S1128"Remove this unused import.(§¨ê8°ß†Îñ1
+9kotlin:S1128"Remove this unused import.(ƒ²³Ë8°ß†Îñ1
+>kotlin:S1128"Remove this unused import.(÷¡ùƒûÿÿÿÿ8°ß†Îñ1
+9kotlin:S1128!"Remove this unused import.(”ªˆ­8š÷ŒÎñ1
+9kotlin:S1128("Remove this unused import.(®©Ô”8±ß†Îñ1
+jkotlin:S1192G"KDefine a constant instead of duplicating this literal "Item image" 3 times.(œû¹æ8²ß†Îñ1
+qkotlin:S37764"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(µÿ¿Å8¶ß†Îñ1

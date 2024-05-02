@@ -32,14 +32,19 @@ import test.team.nti.foodies.model.Product
 import test.team.nti.foodies.ui.theme.OrangePrimary
 
 @Composable
-fun CartItem(item: Product) {
+fun CartItem(
+    item: Product,
+    itemQuantity: Int,
+    onAddToCartClick: (Int) -> Unit,
+    onRemoveFromCart: (Int) -> Unit,
+) {
     Row(
         modifier = Modifier
             .background(color = Color.White)
             .fillMaxWidth()
             .wrapContentHeight()
-            .padding(16.dp),
-        horizontalArrangement = Arrangement.spacedBy(16.dp)
+            .padding(16.dp), horizontalArrangement = Arrangement.spacedBy(16.dp)
+
     ) {
         Image(
             painter = painterResource(id = R.drawable.photo),
@@ -48,11 +53,13 @@ fun CartItem(item: Product) {
         )
 
         Column(
-            modifier = Modifier.height(96.dp),
-            verticalArrangement = Arrangement.SpaceBetween
+            modifier = Modifier.height(96.dp), verticalArrangement = Arrangement.SpaceBetween
         ) {
-            Text(text = item.name,style = MaterialTheme.typography.bodySmall,
-                color = Color.Black.copy(alpha = 0.87f))
+            Text(
+                text = item.name,
+                style = MaterialTheme.typography.bodySmall,
+                color = Color.Black.copy(alpha = 0.87f)
+            )
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -64,7 +71,7 @@ fun CartItem(item: Product) {
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     ElevatedButton(
-                        onClick = { /*TODO*/ },
+                        onClick = { onRemoveFromCart(item.id) },
                         modifier = Modifier
                             .padding(0.dp)
                             .size(40.dp),
@@ -81,12 +88,13 @@ fun CartItem(item: Product) {
                         )
                     }
                     Text(
-                        text = "100",
+                        text = "$itemQuantity",
+                        modifier = Modifier.padding(horizontal = 8.dp),
                         style = MaterialTheme.typography.titleMedium,
                         color = Color.Black.copy(alpha = 0.87f)
                     )
                     ElevatedButton(
-                        onClick = { /*TODO*/ },
+                        onClick = { onAddToCartClick(item.id) },
                         modifier = Modifier
                             .padding(0.dp)
                             .size(40.dp),
@@ -105,20 +113,21 @@ fun CartItem(item: Product) {
                 }
                 Column {
                     Text(
-                        text = "${item.priceCurrent} ₽",
+                        text = "${item.priceCurrent / 100} ₽",
                         style = MaterialTheme.typography.titleMedium,
                         color = Color.Black.copy(alpha = 0.87f)
                     )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text(
-                        text = "${item.priceOld} ₽",
-                        style = MaterialTheme.typography.titleSmall,
-                        color = Color.Black.copy(alpha = 0.6f),
-                        textDecoration = TextDecoration.LineThrough
-                    )
+                    if (item.priceOld != null) {
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = "${item.priceOld / 100} ₽",
+                            style = MaterialTheme.typography.titleSmall,
+                            color = Color.Black.copy(alpha = 0.6f),
+                            textDecoration = TextDecoration.LineThrough
+                        )
+                    }
                 }
             }
         }
-
     }
 }

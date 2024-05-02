@@ -106,3 +106,15 @@ Q.idea/sonarlint/securityhotspotstore/3/7/375d80ba457c6a9a90ff056916fc198d1fa096
 Papp/src/main/java/test/team/nti/foodies/presentation/cart/components/CartItem.kt,6\3\63d57f76e2a8dfb4f89079cb73a7930631bb74c3
 €
 Papp/src/main/java/test/team/nti/foodies/presentation/catalog/CatalogViewModel.kt,6\e\6e5d7fd2d1040cad65b395904963e4648f053020
+ƒ
+Sapp/src/main/java/test/team/nti/foodies/presentation/item_card/ItemCardViewModel.kt,4\5\458735ca316f841271404d3c9b5f9611895f544b
+o
+?app/src/main/java/test/team/nti/foodies/data/entity/CartItem.kt,2\3\2394e12ef5acc3dbb43258e75bcee7b703289563
+j
+:app/src/main/java/test/team/nti/foodies/data/CartModule.kt,d\f\df8a9cb286054379cd3f076d2aead499f33b34b2
+y
+Iapp/src/main/java/test/team/nti/foodies/data/repository/CartRepository.kt,c\d\cd9ec97453549e0bc7f7c1c9c2d558e06b74b24f
+Œ
+\app/src/main/java/test/team/nti/foodies/data/repository/repositoryImpl/CartRepositoryImpl.kt,6\a\6a6a9a80fcd685c82476a061b540d8c412d25a5b
+z
+Japp/src/main/java/test/team/nti/foodies/presentation/cart/CartViewModel.kt,f\5\f533ce161b55a352c5591c82cc1d7b247cf8db1d
