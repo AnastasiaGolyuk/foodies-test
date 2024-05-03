@@ -19,6 +19,7 @@ class CartRepositoryImpl @Inject constructor() : CartRepository {
 
     override fun addItem(itemId: Int) {
         val index = cartItems.indexOfFirst { it.itemId == itemId }
+        //List doesn't contain item
         if (index == -1) {
             cartItems.add(CartItem(itemId, 1))
         } else {

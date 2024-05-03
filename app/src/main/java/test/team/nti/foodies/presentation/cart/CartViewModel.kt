@@ -59,6 +59,7 @@ class CartViewModel @Inject constructor(
             }
         }
         _itemsInCart.clear()
+        //Sort items from the most recent, added to the cart, to the first
         _itemsInCart.addAll(cartItemsValues.reversed())
         setCartPrice()
     }
@@ -72,6 +73,7 @@ class CartViewModel @Inject constructor(
             while (_itemsInCart.isEmpty()) {
                 delay(100)
             }
+            //Sort items from the most recent, added to the cart, to first
             val cartItems = cartRepository.getCartItems().reversed()
             for (index in _itemsInCart.indices) {
                 _cartPrice.intValue += _itemsInCart[index].priceCurrent * cartItems[index].quantity
@@ -87,6 +89,7 @@ class CartViewModel @Inject constructor(
 
     fun removeItemFromCart(itemId: Int) {
         cartRepository.removeItem(itemId)
+        //If item was fully removed from cart
         if (!cartRepository.isItemInCart(itemId)) {
             _itemsInCart.removeIf { it.id == itemId }
         }

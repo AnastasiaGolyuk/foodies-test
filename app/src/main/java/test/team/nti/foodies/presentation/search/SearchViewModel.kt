@@ -57,6 +57,7 @@ class SearchViewModel @Inject constructor(
             _itemsOfSearch.clear()
             if (text.isNotBlank()) {
                 _itemsOfSearch.addAll(_items.filter {
+                    //Convert to the same case for more matches
                     it.name.lowercase(Locale.ROOT).contains(text.lowercase(Locale.ROOT))
                 })
             }

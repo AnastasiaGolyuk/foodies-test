@@ -34,8 +34,11 @@ fun SplashScreen(navController: NavController) {
             composition = composition,
             progress = { logoAnimationState.progress }
         )
+        //When animation come to an end
         if ((logoAnimationState.isAtEnd && logoAnimationState.isPlaying)) {
+            //"Remove" SplashScreen from back stack
             navController.popBackStack()
+            //And navigate to Catalog
             navController.navigate(route = Route.CatalogScreen.route)
         }
     }

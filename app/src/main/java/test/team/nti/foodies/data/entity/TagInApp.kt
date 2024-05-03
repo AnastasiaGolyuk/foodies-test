@@ -4,11 +4,26 @@ import androidx.annotation.DrawableRes
 import test.team.nti.foodies.R
 import test.team.nti.foodies.model.Tag
 
+
+/**
+ * Tag in app
+ *
+ * @property id
+ * @property name
+ * @property imageRes
+ * @constructor Create empty Tag in app
+ */
 data class TagInApp(val id: Int, val name: String, @DrawableRes val imageRes: Int) {
     companion object {
 
         private val tagsList = mutableListOf<TagInApp>()
 
+
+        /**
+         * Set list
+         *
+         * @param tags - fetched tags, to get tags names
+         */
         fun setList(tags: List<Tag>) {
             val list = mutableListOf<TagInApp>()
             list.add(TagInApp(0, "Со скидкой", R.drawable.sale_tag))

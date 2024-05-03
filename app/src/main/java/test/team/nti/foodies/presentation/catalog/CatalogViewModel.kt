@@ -100,6 +100,7 @@ class CatalogViewModel @Inject constructor(
 
     private fun filterItems(category: Category) {
         viewModelScope.launch {
+            //Wait while _items being fetched
             while (_items.isEmpty()) {
                 delay(100)
             }
@@ -116,13 +117,18 @@ class CatalogViewModel @Inject constructor(
         val list = mutableListOf<Product>()
         val tagsSorted = selectedTags.sorted()
         for (tagId in tagsSorted) {
+            //If it's sale tag, need to check priceOld field, not tagsId
             if (tagId == 0) {
                 list.addAll(_itemsOfCategory.filter { it.priceOld != null })
             } else {
+                //Otherwise filter items to make sure it tags count no less then selected amount
                 val filteredItems = _itemsOfCategory.filter { it.tagIds.size >= tagsSorted.size }
+                //On each iteration remove items, that where previously added,
+                //but don't contain needed tags
                 if (list.isNotEmpty()){
                     list.removeIf { !it.tagIds.contains(tagId) }
                 } else {
+                    //And add items with selected tag
                     list.addAll(filteredItems.filter { it.tagIds.contains(tagId) })
                 }
             }
