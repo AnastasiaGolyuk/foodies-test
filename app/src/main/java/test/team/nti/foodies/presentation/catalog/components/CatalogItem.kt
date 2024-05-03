@@ -121,7 +121,9 @@ fun CatalogItem(
                                 text = "${item.priceOld / 100} ₽",
                                 style = MaterialTheme.typography.titleSmall,
                                 color = Color.Black.copy(alpha = 0.6f),
-                                textDecoration = TextDecoration.LineThrough
+                                textDecoration = TextDecoration.LineThrough,
+                                overflow = TextOverflow.Ellipsis,
+                                maxLines = 1
                             )
                         }
                     }

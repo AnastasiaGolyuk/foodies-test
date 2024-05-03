@@ -10,4 +10,6 @@ sealed class Route(
     data object ItemCardScreen : Route(route = "itemCardScreen")
 
     data object CartScreen : Route(route = "cartScreen")
+
+    data object SearchScreen : Route(route = "searchString")
 }

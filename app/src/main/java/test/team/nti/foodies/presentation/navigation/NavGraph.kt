@@ -13,6 +13,8 @@ import test.team.nti.foodies.presentation.catalog.CatalogScreen
 import test.team.nti.foodies.presentation.catalog.CatalogViewModel
 import test.team.nti.foodies.presentation.item_card.ItemCardScreen
 import test.team.nti.foodies.presentation.item_card.ItemCardViewModel
+import test.team.nti.foodies.presentation.search.SearchScreen
+import test.team.nti.foodies.presentation.search.SearchViewModel
 import test.team.nti.foodies.presentation.splash_screen.SplashScreen
 
 @Composable
@@ -28,7 +30,7 @@ fun NavGraph(
             SplashScreen(navController = navController)
         }
         composable(route = Route.CatalogScreen.route) {
-            val viewModel : CatalogViewModel = hiltViewModel()
+            val viewModel: CatalogViewModel = hiltViewModel()
             CatalogScreen(navController = navController, viewModel = viewModel)
         }
         composable(route = "${Route.ItemCardScreen.route}/{itemId}",
@@ -38,13 +40,17 @@ fun NavGraph(
                 }
             )) { backStackEntry ->
             val itemId = backStackEntry.arguments?.getInt("itemId")
-            val viewModel : ItemCardViewModel = hiltViewModel()
-            ItemCardScreen(navController = navController,itemId = itemId!!, viewModel = viewModel)
+            val viewModel: ItemCardViewModel = hiltViewModel()
+            ItemCardScreen(navController = navController, itemId = itemId!!, viewModel = viewModel)
 
         }
         composable(route = Route.CartScreen.route) {
             val viewModel: CartViewModel = hiltViewModel()
             CartScreen(navController = navController, viewModel = viewModel)
+        }
+        composable(route = Route.SearchScreen.route) {
+            val viewModel: SearchViewModel = hiltViewModel()
+            SearchScreen(navController = navController, viewModel = viewModel)
         }
     }
 }

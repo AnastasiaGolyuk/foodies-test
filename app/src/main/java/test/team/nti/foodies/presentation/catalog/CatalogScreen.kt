@@ -1,10 +1,8 @@
 package test.team.nti.foodies.presentation.catalog
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -31,7 +29,6 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -58,6 +55,7 @@ import test.team.nti.foodies.R
 import test.team.nti.foodies.presentation.catalog.components.CatalogItem
 import test.team.nti.foodies.presentation.catalog.components.EmptyCatalogScreen
 import test.team.nti.foodies.presentation.catalog.components.FilterModalDialog
+import test.team.nti.foodies.presentation.common.LoadingScreen
 import test.team.nti.foodies.presentation.navigation.Route
 import test.team.nti.foodies.ui.theme.OrangePrimary
 
@@ -157,7 +155,7 @@ fun CatalogScreen(navController: NavController, viewModel: CatalogViewModel) {
                             painter = painterResource(id = R.drawable.logo),
                             contentDescription = "App logo"
                         )
-                        IconButton(onClick = { /*TODO*/ }) {
+                        IconButton(onClick = { navController.navigate(Route.SearchScreen.route) }) {
                             Icon(
                                 painter = painterResource(id = R.drawable.search_icon),
                                 contentDescription = "Search button"
@@ -280,21 +278,6 @@ fun CatalogScreen(navController: NavController, viewModel: CatalogViewModel) {
             }
         }
 
-
-
-        AnimatedVisibility(
-            visible = viewModel.isLoading.value, exit = fadeOut(animationSpec = tween(600))
-        ) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(color = Color.White),
-                contentAlignment = Alignment.Center
-            ) {
-                CircularProgressIndicator(
-                    modifier = Modifier.size(64.dp), color = OrangePrimary, strokeWidth = 4.dp
-                )
-            }
-        }
+        LoadingScreen(isLoading = viewModel.isLoading.value)
     }
 }
