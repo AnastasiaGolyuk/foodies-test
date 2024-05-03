@@ -28,8 +28,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import test.team.nti.foodies.R
 import test.team.nti.foodies.data.entity.TagInApp
 import test.team.nti.foodies.ui.theme.OrangePrimary
 
@@ -64,7 +66,7 @@ fun FilterModalDialog(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Text(
-                text = "Подобрать блюда",
+                text = stringResource(R.string.filters_label),
                 modifier = Modifier.padding(0.dp),
                 style = MaterialTheme.typography.headlineLarge,
                 color = Color.Black.copy(alpha = 0.6f),
@@ -114,7 +116,7 @@ fun FilterModalDialog(
                 contentPadding = PaddingValues(horizontal = 16.dp, vertical = 0.dp)
             ) {
                 Text(
-                    text = "Готово",
+                    text = stringResource(R.string.done_button_label),
                     modifier = Modifier.padding(0.dp),
                     style = MaterialTheme.typography.titleMedium,
                     color = Color.White

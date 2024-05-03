@@ -5,6 +5,7 @@ import test.team.nti.foodies.model.Category
 import test.team.nti.foodies.model.Product
 import test.team.nti.foodies.model.Tag
 
+
 interface ApiService {
 
     @GET("Categories.json")
@@ -16,5 +17,4 @@ interface ApiService {
 
     @GET("Products.json")
     suspend fun getItems(): List<Product>
-
 }

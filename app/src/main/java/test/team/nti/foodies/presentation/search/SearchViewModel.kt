@@ -53,7 +53,7 @@ class SearchViewModel @Inject constructor(
     fun onInputChange(text: String) {
         viewModelScope.launch {
             _isLoading.value = true
-            _searchString.value=text
+            _searchString.value = text
             _itemsOfSearch.clear()
             if (text.isNotBlank()) {
                 _itemsOfSearch.addAll(_items.filter {
@@ -64,8 +64,8 @@ class SearchViewModel @Inject constructor(
         }
     }
 
-    fun cleanSearchFiled(){
-        _searchString.value=""
+    fun cleanSearchFiled() {
+        _searchString.value = ""
         _itemsOfSearch.clear()
     }
 
@@ -81,7 +81,7 @@ class SearchViewModel @Inject constructor(
 
     fun setCartPrice() {
         viewModelScope.launch {
-            while (_items.isEmpty()){
+            while (_items.isEmpty()) {
                 delay(100)
             }
             _cartPrice.intValue = 0

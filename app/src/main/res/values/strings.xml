@@ -1,4 +1,47 @@
 <resources>
     <string name="app_name">foodies</string>
+
+    <!--    CATALOG   -->
+    <string name="catalog_empty_category">Нет блюд, соответсвующих\nданной категории :(</string>
+    <string name="catalog_empty_filters">Таких блюд в данной категории нет :(\nПопробуйте изменить фильтры</string>
+
+    <!--    CART   -->
+    <string name="cart_empty_screen">Пусто, выберите блюда\nв каталоге :)</string>
+    <string name="cart_order_button">"Заказать за "</string>
+    <string name="cart_label">Корзина</string>
+
+    <!--    ITEM CARD   -->
+    <string name="weight">Вес</string>
+    <string name="energy_value">Энерг. ценность</string>
+    <string name="proteins">Белки</string>
+    <string name="fats">Жиры</string>
+    <string name="carbohydrates">Углеводы</string>
+    <string name="energy_value_measurements">%1$s ккал</string>
+    <string name="proteins_measurements">%1$s г</string>
+    <string name="fats_measurements">%1$s г</string>
+    <string name="carbohydrates_measurements">%1$s г</string>
+
+    <!--    FILTERS   -->
     <string name="tag_name_sale">Со скидкой</string>
+    <string name="filters_label">Подобрать блюда</string>
+    <string name="filter_button">Filter button</string>
+    <string name="done_button_label">Готово</string>
+
+    <!--    SEARCH   -->
+    <string name="search_screen_empty">Ничего не нашлось :(</string>
+    <string name="search_screen_initial">Введите название блюда,\nкоторое ищете</string>
+    <string name="search_field_placeholder">Найти блюдо</string>
+    <string name="clear_search_string">Clear search string</string>
+    <string name="search_button">Search button</string>
+
+    <!--    COMMON   -->
+    <string name="cart_button_icon">Cart button icon</string>
+    <string name="go_back_button">Go back button</string>
+    <string name="in_cart_button_label">"В корзину за "</string>
+    <string name="item_image">Item image</string>
+    <string name="item_price">%1$s ₽</string>
+    <string name="remove_item">Remove item</string>
+    <string name="add_item">Add item</string>
+    <string name="app_logo">App logo</string>
+
 </resources>

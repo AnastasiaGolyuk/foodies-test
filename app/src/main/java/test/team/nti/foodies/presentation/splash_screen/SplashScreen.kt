@@ -11,11 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
-import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import test.team.nti.foodies.R
 import test.team.nti.foodies.presentation.navigation.Route
+
 
 @Composable
 fun SplashScreen(navController: NavController) {

@@ -12,7 +12,6 @@ data class TagInApp(val id: Int, val name: String, @DrawableRes val imageRes: In
         fun setList(tags: List<Tag>) {
             val list = mutableListOf<TagInApp>()
             list.add(TagInApp(0, "Со скидкой", R.drawable.sale_tag))
-
             list.add(TagInApp(1, tags[0].name, R.drawable.new_tag))
             list.add(TagInApp(2, tags[1].name, R.drawable.vegan_tag))
             list.add(TagInApp(3, tags[2].name, R.drawable.hit_tag))

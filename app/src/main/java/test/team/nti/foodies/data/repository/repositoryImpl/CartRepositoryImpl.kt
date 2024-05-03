@@ -18,13 +18,11 @@ class CartRepositoryImpl @Inject constructor() : CartRepository {
     }
 
     override fun addItem(itemId: Int) {
-
         val index = cartItems.indexOfFirst { it.itemId == itemId }
         if (index == -1) {
             cartItems.add(CartItem(itemId, 1))
         } else {
-            val quantity = cartItems[index].quantity
-            cartItems[index] = CartItem(itemId, quantity + 1)
+            cartItems[index] = CartItem(itemId, cartItems[index].quantity + 1)
         }
     }
 
@@ -48,7 +46,7 @@ class CartRepositoryImpl @Inject constructor() : CartRepository {
     override fun getItemQuantity(itemId: Int): Int {
         val cartItem: CartItem?
         try {
-            cartItem  = cartItems.first { it.itemId == itemId }
+            cartItem = cartItems.first { it.itemId == itemId }
         } catch (e: NoSuchElementException) {
             e.printStackTrace()
             return 0
